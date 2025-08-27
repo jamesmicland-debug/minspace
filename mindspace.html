@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mind Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="mindspace.css">
+</head>
+<body>
+  <!-- Login Screen -->
+  <div class="login-screen" id="loginScreen">
+    <h1> Mind Space</h1>
+    <p class="tagline">Enter your name to begin</p>
+    <input type="text" id="username" placeholder="Your name">
+    <input type="file" id="avatarUpload" accept="image/*">
+    <button onclick="login()">Enter</button>
+  </div>
+
+  <!-- Diary Screen -->
+  <div class="container" id="diaryScreen" style="display: none;">
+    <div class="header">
+      <img id="avatar" src="" alt="Avatar" class="avatar">
+      <h1 id="welcomeMessage">Welcome</h1>
+      <div class="controls">
+        <button onclick="logout()">Logout</button>
+        <button onclick="toggleTheme()"></button>
+        <button onclick="exportDiary()">Export</button>
+      </div>
+    </div>
+
+    <p class="tagline">Your quiet place for loud thoughts.</p>
+
+    <label for="mood">Mood:</label>
+    <select id="mood">
+      <option>Happy</option>
+      <option> Sad</option>
+      <option> Angry</option>
+      <option> Calm</option>
+      <option> Tired</option>
+    </select>
+
+    <textarea id="entry" placeholder="Write your thoughts here..."></textarea>
+
+    <label class="read-later">
+      <input type="checkbox" id="readLater">
+       Mark this entry to read later
+    </label>
+
+    <button onclick="saveEntry()">Save Entry</button>
+
+    <input type="text" id="searchBar" placeholder="Search entries..." oninput="displayEntries()">
+    <div id="confirmation"></div>
+
+    <h2> Your Past Entries</h2>
+    <div id="entries"></div>
+  </div>
+
+  <script src="mindspace.js"></script>
+</body>
+</html>
